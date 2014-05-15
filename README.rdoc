@@ -1,4 +1,12 @@
+http://damp-lowlands-7928.herokuapp.com/
+
+Scope:
+User can create an account and save search keywords within it. User can then poemize wikipedia articles found with keyword. Poemization may result in the shuffling, deletion, and arbitrary and/or haiku-based and/or unordered list based joining of words from article, depending on what I have time for and what makes sense for the total range of searched for wikipedia terms. Users can then save poems. Oblique styling.
+
+User has many keywords, keyword has many poems
+
+Resources:
 
 wikipedia gem
-htmlentities
-hpricot
+htmlentities gem
+hpricot gem
