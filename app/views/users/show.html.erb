@@ -1,0 +1,12 @@
+<h1>ARTICLES</h1>
+<ul>
+  <% @user_articles.each do |article| %>
+    <li><a href="/users/<%= article.user_id %>/articles/<%= article.id %>"><%= article.article_name %></a></li>
+  <% end %>
+</ul>
+<form action="/users/<%= @user.id %>/articles" method='post'>
+  <%= token_tag %>
+  <input type="text" placeholder="New article" name='article[article_name]'>
+
+  <input type="submit">
+</form>
