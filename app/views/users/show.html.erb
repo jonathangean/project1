@@ -4,9 +4,9 @@
     <li><a href="/users/<%= article.user_id %>/articles/<%= article.id %>"><%= article.article_name %></a></li>
   <% end %>
 </ul>
-<form action="/users/<%= @user.id %>/articles" method='post'>
+<form action="/users/<%= @user.id %>/articles/result" method='post'>
   <%= token_tag %>
-  <input type="text" placeholder="New article" name='article[article_name]'>
+  <input type="text" placeholder="Search" name='result[search]'>
 
   <input type="submit">
 </form>

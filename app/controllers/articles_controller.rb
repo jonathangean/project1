@@ -8,6 +8,12 @@ class ArticlesController < ApplicationController
   def show
     @poems = Article.find(params[:id]).poems
   end
+  def result
+
+  end
+  def search
+    @result = params[:search_term]
+  end
 end
 
 private
