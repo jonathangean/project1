@@ -7,7 +7,12 @@ Rails.application.routes.draw do
     end
   end
   get '/users/:user_id/articles/result/' => 'articles#search'
-  # post '/users/:user_id/articles/result/' => 'articles#search'
+  post '/users/:user_id/articles/result/' => 'articles#search'
+
+  get 'sessions/new' => 'sessions#new', as: 'log_in'
+  post 'sessions' => 'sessions#create'
+  delete 'sessions' => 'sessions#destroy', as: 'log_out'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

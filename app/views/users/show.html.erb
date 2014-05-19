@@ -4,9 +4,8 @@
     <li><a href="/users/<%= article.user_id %>/articles/<%= article.id %>"><%= article.article_name %></a></li>
   <% end %>
 </ul>
-<form action="/users/<%= @user.id %>/articles/result" method='post'>
-  <%= token_tag %>
-  <input type="text" placeholder="Search" name='result[search]'>
-
+<form action="/users/<%= @user.id %>/articles/result" method='get'>
+  <input type="text" placeholder="Search" name='search_term'>
   <input type="submit">
 </form>
+

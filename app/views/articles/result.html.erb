@@ -1,4 +1,8 @@
-<% if @result==nil %>
+<% result = params[:search_term] %>
+<% search = Wikipedia::article "#{result}" %>
+<%= puts search %>
+<% if result==nil %>
     <%= puts "Bad search" %>
     <% else %>
     <%= puts "Good search" %>
+<% end %>

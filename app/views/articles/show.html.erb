@@ -1,4 +1,15 @@
+<% search = params[:search_term] %>
+<% result = Wikipedia::article "#{search}" %>
+<%= result %>
+<% if result == [] %>
+    <p>Bad search</p>
+    <% else %>
+    <p>Good search</p>
+    <form action="/articles/create" method="post">
+        <%= token_tag %>
+        <input type="hidden" name='article_name' value='<%= result[:search_term] %>'>
+        <input type="hidden" name='article_text' value='<%= result[result] %>'
+        <button type='submit'>Save</button>
+    </form>
+<% end %>
 
-  <% @poems.each do |poem| %>
-    <%= poem.poem_text %>
-  <% end %>
