@@ -1,17 +1,25 @@
 Rails.application.routes.draw do
   root 'users#index'
-  resources :users do
-    resources :articles do
-      resources :poems
 
-    end
+  get '/search' => 'articles#result'
+
+  resources :users do
+    resources :articles
   end
-  get '/users/:user_id/articles/result/' => 'articles#search'
-  post '/users/:user_id/articles/result/' => 'articles#search'
+
+  resources :articles do
+    resources :poem
+  end
+
+
+  # post '/users/:user_id/articles/result/' => 'articles#search'
 
   get 'sessions/new' => 'sessions#new', as: 'log_in'
+  get 'sessions' => 'sessions#index', as: 'sessions'
   post 'sessions' => 'sessions#create'
   delete 'sessions' => 'sessions#destroy', as: 'log_out'
+
+  # post 'articles/save' => 'articles#save'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

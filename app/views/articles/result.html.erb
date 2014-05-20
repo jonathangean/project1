@@ -1,8 +1,10 @@
-<% result = params[:search_term] %>
-<% search = Wikipedia::article "#{result}" %>
-<%= puts search %>
-<% if result==nil %>
-    <%= puts "Bad search" %>
-    <% else %>
-    <%= puts "Good search" %>
+<% @article.each do |line| %>
+<p><%= line %></p>
 <% end %>
+
+<form action="articles" method="post">
+  <%= token_tag %>
+  <input type="text" name="article[article_name]">
+  <input type="hidden" name="article[article_text]" value="<%= @article.join %>">
+  <input type="submit">
+</form>

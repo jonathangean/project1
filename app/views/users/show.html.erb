@@ -1,11 +1,19 @@
 <h1>ARTICLES</h1>
 <ul>
   <% @user_articles.each do |article| %>
-    <li><a href="/users/<%= article.user_id %>/articles/<%= article.id %>"><%= article.article_name %></a></li>
-  <% end %>
+    <li>
+      <a href="/users/<%= article.user_id %>/articles/<%= article.id %>"><%= article.article_name %></a>
+    </li>
+    <button>
+      <a href="/articles/<%= article.id %>/poem/new">Think</a>
+    </button>
 </ul>
-<form action="/users/<%= @user.id %>/articles/result" method='get'>
+
+<% end %>
+
+<form action="/search" method='get'>
   <input type="text" placeholder="Search" name='search_term'>
   <input type="submit">
 </form>
+
 

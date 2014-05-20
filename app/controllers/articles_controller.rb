@@ -1,27 +1,32 @@
 class ArticlesController < ApplicationController
-    before_action:current_user
+    before_filter :authorize
+  def index
+  end
+
+  def new
+  end
 
   def create
     new_article = Article.create(article_params)
-    user_of_article = User.find(params[:user_id])
-    user_of_article.articles << new_article
-    redirect_to "/users/#{new_article.user_id}"
+    current_user.articles << new_article
+    redirect_to "/users/#{current_user.id}"
   end
   def show
-    @result = params[:search_term]
-
+    @article = Article.find(params[:id])
   end
   def result
-
+    @article = Wikipedia::article(params[:search_term])
   end
+
   def search
+    render 'result'
   end
 
   #def save
   #  new_article = Article.create(article_name: require(:article).permit(:article_name), article_text: require(:article).permit(:article_text) )
   #  @current_user.articles << new_article
   #  redirect_to 'users/#{@current_user.id}'
-  #end
+  # end
 
 end
 

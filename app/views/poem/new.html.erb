@@ -1,0 +1,149 @@
+
+
+
+<div id="container" >
+  <h2 id="background6"><%= @poem3 %>.</h3>
+
+    <div id="header">
+      <% color_var = ['white','black'].sample %>
+      <h1 style="color:<%= color_var %>"><%= @poem1 %>.</h1>
+    </div>
+    <div id="header2">
+      <% color_var = ['white','black'].sample %>
+      <h2 style="color:<%= color_var %>"><%= @poem2 %>.</h2>
+    </div>
+
+    <div id="poem2background">
+      <% color_var = ['white','black'].sample %>
+      <p style="color:<%= color_var %>"><%= @poem3 %></p>
+    </div>
+    <% width_var = rand(300..1000) %>
+    <div id="outer" style="width: <%= width_var %>px;">
+          <% width_var2 = rand(100..500) %>
+      <div id="inner" style="width: <%= width_var2 %>px; margin: 0 auto;">
+      <ul>
+        <% @list_item1.each do |line| %>
+        <% color_var = ['white','black'].sample %>
+        <% font_var = rand(12..50) %>
+        <li style="color:<%= color_var %>;font-size:<%= font_var %>px;"><%= line %></li>
+        <% end %>
+      </ul>
+    </div>
+    </div>
+    <div id="outer" style="width: 600px;">
+      <div id="inner" style="width: 250px; margin: 0 auto;">
+      <ul>
+        <% @list_item4.each do |line| %>
+        <% color_var = ['white','black'].sample %>
+        <% font_var = rand(12..50) %>
+        <li style="color:<%= color_var %>;font-size:<%= font_var %>px;"><%= line %></li>
+        <% end %>
+      </ul>
+    </div>
+    </div>
+    <% float_var = ['left','right'].sample %>
+    <div style="float:<%= float_var %>" >
+      <ul>
+        <% @new_arr.each do |line| %>
+        <% color_var = ['white','black','white'].sample %>
+        <% font_var = rand(8..50) %>
+        <li style="color:<%= color_var %>;font-size:<%= font_var %>px;"><%= line %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% float_var = ['left','right'].sample %>
+    <div style="float:<%= float_var %>">
+      <ul>
+        <% @list_item5.each do |line| %>
+        <% color_var = ['white','black','white'].sample %>
+        <% font_var = rand(8..25) %>
+        <li style="color:<%= color_var %>;font-size:<%= font_var %>px;"><%= line %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% float_var = ['left','right'].sample %>
+    <div style="float:<%= float_var %>" >
+      <ul>
+        <% @new_arr.each do |line| %>
+        <% color_var = ['white','black'].sample %>
+        <li style="color:<%= color_var %>"><%= line %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="outer">
+      <div id="inner"
+      <ul>
+        <% @list_item1.each do |line| %>
+        <% color_var = ['white','black'].sample %>
+        <li style="color:<%= color_var %>"><%= line %></li>
+         <% end %>
+      </ul>
+    </div>
+    </div>
+    <div id="background9">
+      <ul>
+        <% color_var = ['white','black'].sample %>
+        <li style="color:<%= color_var %>, font-size:24px;"><%= @list_item2.join(" ") %></li>
+      </ul>
+    </div>
+    <div id="background8" >
+      <ul>
+        <% @list_item2.each do |line| %>
+        <% color_var = ['white','black'].sample %>
+        <li style="color:<%= color_var %>"><%= line %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="background5">
+      <ul>
+        <% @list_item3.each do |line| %>
+        <% color_var = ['white','black'].sample %>
+        <li style="color:<%= color_var %>"><%= line %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div id="background7" >
+      <ul>
+        <% @list_item1.each do |line| %>
+        <% color_var = ['white','black'].sample %>
+        <li style="color:<%= color_var %>"><%= line %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div id="background4" >
+      <ul>
+        <% @new_arr.each do |line| %>
+        <% color_var = ['white','black'].sample %>
+        <li><p style="color:<%= color_var %>"><%= line %></p></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="background3" >
+      <ul>
+        <% @list_item2.each do |line| %>
+        <% color_var = ['white','black'].sample %>
+        <li style="color:<%= color_var %>"><%= line %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="background2">
+      <ul>
+        <% @list_item4.each do |line| %>
+        <% color_var = ['white','black'].sample %>
+        <li style="color:<%= color_var %>"><%= line %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="background" >
+      <ul>
+        <% @new_arr.each do |line| %>
+        <% color_var = ['white','black'].sample %>
+        <li style="color:<%= color_var %>"><%= line %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+
