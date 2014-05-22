@@ -1,84 +1,69 @@
 
 
 <head>
-   <link href='http://fonts.googleapis.com/css?family=Domine' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Hanalei|Miss+Fajardose|Macondo|Jim+Nightshade|Dr+Sugiyama|Princess+Sofia|Akronim|Mrs+Saint+Delafield|Ruthie|Jacques+Francois+Shadow|Rye|Aguafina+Script|Lovers+Quarrel|Lancelot|Rouge+Script|Jacques+Francois|Freckle+Face|Euphoria+Script|Dynalight|Meie+Script|MedievalSharp|Oleo+Script+Swash+Caps|Meddon|Grand+Hotel|Cinzel+Decorative|Lily+Script+One|Sunshiney|Petit+Formal+Script|Sacramento|Fredericka+the+Great|Gilda+Display|Croissant+One|Quintessential|Stalemate|Almendra+Display|Elsie+Swash+Caps|Elsie|Clicker+Script|Fruktur|Julius+Sans+One' rel='stylesheet' type='text/css'>
 
 </head>
+
 <div id="container">
-  <h2 id="background6"><%= @poem3 %>.</h3>
+  <% font_fam_var = ['Miss Fajardose', 'Macondo', 'Jim Nightshade', 'Dr Sugiyama', 'Princess Sofia', 'Mrs Saint Delafield', 'Ruthie', 'Aquafina Script', 'Lovers Quarrel', 'Lancelot', 'Rouge Script', 'Jacques Francois','Freckle Face','Euphoria Script', 'Dynalight', 'Meie Script', 'Oleo Script Swash Caps', 'Grand Hotel', 'Lily Script One', 'Sunshiney', 'Petit Formal Script','Sacramento', 'Gilda Display', 'Croissant One','Quintessential', 'Stalemate', 'Almandra Display','Elsie Swash Caps','Clicker Script', 'Fruktur' ] %>
+  <h2 id="background6" style="font-family:'<%= font_fam_var %>.sample';"><%= @poem3 %>.</h3>
 
     <div id="header">
-      <% color_var = ['white','black'].sample %>
-      <h1 style="color:<%= color_var %>"><%= @poem1 %>.</h1>
+      <% color_var = ['white','black','white'].sample %>
+      <h1 style="color:<%= color_var %>; font-family:'<%= font_fam_var %>.sample'"><%= @poem1 %>.</h1>
     </div>
     <div id="header2">
-      <% color_var = ['white','black'].sample %>
-      <h2 style="color:<%= color_var %>"><%= @poem2 %>.</h2>
+      <% color_var = ['white','black','white'].sample %>
+      <h2 style="color:<%= color_var %>; font-family:'<%= font_fam_var %>.sample'"><%= @poem2 %>.</h2>
     </div>
 
     <div id="poem2background">
-      <% color_var = ['white','black'].sample %>
-      <p style="color:<%= color_var %>"><%= @poem3 %></p>
+      <% color_var = ['white','black','white'].sample %>
+      <p style="color:<%= color_var %>; font-family:'<%= font_fam_var %>.sample'"><%= @poem3 %></p>
     </div>
-    <% width_var = rand(300..1000) %>
-    <div id="outer" style="width: <%= width_var %>px;">
-          <% width_var2 = rand(100..500) %>
-      <div id="inner" style="width: <%= width_var2 %>px; margin: 0 auto;">
+ <div id="background13" style="width: 600px;">
+      <div id="inner" style="width: 250px; margin: 0 auto;">
+
       <ul>
         <% @list_item1.each do |line| %>
-        <% color_var = ['white','black'].sample %>
-        <% font_var = rand(12..50) %>
-        <li style="color:<%= color_var %>;font-size:<%= font_var %>px;"><%= line %></li>
+        <% font_var = rand(120..250) %>
+        <li style="color:white;font-family:'<%= font_fam_var %>.sample';font-size:<%= font_var %>px;"><%= line.gsub(/["',.(){}]/, " ") %></li>
         <% end %>
       </ul>
     </div>
     </div>
-    <div id="outer" style="width: 600px;">
+    <div id="background10" style="width: 600px;">
       <div id="inner" style="width: 250px; margin: 0 auto;">
       <ul>
         <% @list_item4.each do |line| %>
-        <% color_var = ['white','black'].sample %>
-        <% font_var = rand(12..50) %>
-        <li style="color:<%= color_var %>;font-size:<%= font_var %>px;"><%= line %></li>
-        <% end %>
-      </ul>
-    </div>
-    </div>
-    <% float_var = ['left','right'].sample %>
-    <div style="float:<%= float_var %>" >
-      <ul>
-        <% @new_arr.each do |line| %>
         <% color_var = ['white','black','white'].sample %>
-        <% font_var = rand(8..50) %>
-        <li style="color:<%= color_var %>;font-size:<%= font_var %>px;"><%= line %></li>
+        <% font_var = rand(170..250) %>
+        <li style="color:<%= color_var %>;font-size:<%= font_var %>px;font-family:'<%= font_fam_var %>.sample'"><%= line.gsub(/["',.(){}]/, " ") %></li>
         <% end %>
       </ul>
     </div>
-    <% float_var = ['left','right'].sample %>
-    <div style="float:<%= float_var %>">
+    </div>
+
+    <div id="background11" style="width: 600px;">
+      <div id="inner" style="width: 250px; margin: 0 auto;">
       <ul>
         <% @list_item5.each do |line| %>
         <% color_var = ['white','black','white'].sample %>
-        <% font_var = rand(8..25) %>
-        <li style="color:<%= color_var %>;font-size:<%= font_var %>px;"><%= line %></li>
+        <% font_var = rand(180..225) %>
+        <li style="color:<%= color_var %>;font-size:<%= font_var %>px;font-family: '<%= font_fam_var.sample %>'"><%= line.gsub(/["',.(){}]/, " ") %></li>
         <% end %>
       </ul>
+    </div>
     </div>
     <% float_var = ['left','right'].sample %>
-    <div style="float:<%= float_var %>" >
-      <ul>
-        <% @new_arr.each do |line| %>
-        <% color_var = ['white','black'].sample %>
-        <li style="color:<%= color_var %>"><%= line %></li>
-        <% end %>
-      </ul>
-    </div>
-    <div id="outer">
+
+    <div id="background12">
       <div id="inner">
       <ul>
         <% @list_item1.each do |line| %>
-        <% color_var = ['white','black'].sample %>
-        <li style="color:<%= color_var %>"><%= line %></li>
+        <% color_var = ['white','black','white'].sample %>
+        <li style="color:<%= color_var %>;font-family:'<%= font_fam_var.sample %>'"><%= line.gsub(/["',.(){}]/, " ") %></li>
          <% end %>
       </ul>
     </div>
@@ -86,14 +71,14 @@
     <div id="background9">
       <ul>
         <% color_var = ['white','black'].sample %>
-        <li style="color:<%= color_var %>, font-size:24px;"><%= @list_item2.join(" ") %></li>
+        <li style="color:<%= color_var %>;font-family:'<%= font_fam_var.sample %>';"><%= @list_item2.join(" ") %></li>
       </ul>
     </div>
     <div id="background8" >
       <ul>
         <% @list_item2.each do |line| %>
         <% color_var = ['white','black'].sample %>
-        <li style="color:<%= color_var %>"><%= line %></li>
+        <li style="color:<%= color_var %>;font-family:'<%= font_fam_var.sample %>'"><%= line.gsub(/["',.(){}]/, " ") %></li>
         <% end %>
       </ul>
     </div>
@@ -101,16 +86,16 @@
       <ul>
         <% @list_item3.each do |line| %>
         <% color_var = ['white','black'].sample %>
-        <li style="color:<%= color_var %>"><%= line %></li>
+        <li style="color:<%= color_var %>;font-family:'<%= font_fam_var.sample %>'"><%= line.gsub(/["',.(){}]/, " ") %></li>
         <% end %>
       </ul>
     </div>
 
     <div id="background7" >
       <ul>
-        <% @list_item1.each do |line| %>
+        <% @list_item4.each do |line| %>
         <% color_var = ['white','black'].sample %>
-        <li style="color:<%= color_var %>"><%= line %></li>
+        <li style="color:<%= color_var %>;font-family:'<%= font_fam_var.sample %>'"><%= line.gsub(/["',.(){}]/, " ") %></li>
         <% end %>
       </ul>
     </div>
@@ -119,15 +104,15 @@
       <ul>
         <% @new_arr.each do |line| %>
         <% color_var = ['white','black'].sample %>
-        <li><p style="color:<%= color_var %>"><%= line %></p></li>
+        <li><p style="color:<%= color_var %>;font-family:'<%= font_fam_var.sample %>'"><%= line.gsub(/["',.(){}]/, " ") %></p></li>
         <% end %>
       </ul>
     </div>
     <div id="background3" >
       <ul>
-        <% @list_item2.each do |line| %>
+        <% @list_item1.each do |line| %>
         <% color_var = ['white','black'].sample %>
-        <li style="color:<%= color_var %>"><%= line %></li>
+        <li style="color:<%= color_var %>;font-family:'<%= font_fam_var.sample %>'"><%= line.gsub(/["',.(){}]/, " ") %></li>
         <% end %>
       </ul>
     </div>
@@ -135,7 +120,7 @@
       <ul>
         <% @list_item4.each do |line| %>
         <% color_var = ['white','black'].sample %>
-        <li style="color:<%= color_var %>"><%= line %></li>
+        <li style="color:<%= color_var %>;font-family:'<%= font_fam_var.sample %>'"><%= line.gsub(/["',.(){}]/, " ") %></li>
         <% end %>
       </ul>
     </div>
@@ -143,10 +128,13 @@
       <ul>
         <% @new_arr.each do |line| %>
         <% color_var = ['white','black'].sample %>
-        <li style="color:<%= color_var %>"><%= line %></li>
+        <li style="color:<%= color_var %>;font-family:'<%= font_fam_var.sample %>'"><%= line.gsub(/["',.(){}]/, " ") %></li>
         <% end %>
       </ul>
     </div>
   </div>
+
+
+
 
 

@@ -1,21 +1,18 @@
-
-<h2>Welcome</h2>
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Freckle+Face' rel='stylesheet' type='text/css'>
+</head>
+<center><h2 style="font-family: 'Freckle Face';font-size: 150px;">Welcome</h2></center>
 
 <% if current_user %>
   <p>
-    <%= current_user.username %>
+    <center><%= current_user.username %></center>
   </p>
-  <%= link_to "Log-Out", log_out_path, method: :delete %>
+</br>
+</br>
+  <center style="font-family: 'Freckle Face';font-size: 96px;"><a href="/users/<%= current_user.id %>">Articles</a></center>
+  <center style="font-family: 'Freckle Face';font-size: 96px;"><a href="/users/<%= current_user.id %>"><%= link_to "Log-Out", log_out_path, method: :delete %></center>
 <% else%>
-  <%= link_to "Log-In", log_in_path %>
-  <%= link_to "Sign-Up", new_user_path %>
+  <center><%= link_to "Log-In", log_in_path %></center>
+  <center><%= link_to "Sign-Up", new_user_path %></center>
 <% end %>
 
-<ul>
-  <h1>Users</h1>
-<% @users.each do |user| %>
-  <li>
-    <a href="/users/<%= user.id %>"><%= user.username %></a>
-  </li>
-  <% end %>
-  </ul>

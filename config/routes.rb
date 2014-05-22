@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :poem
   end
-
+    post '/users/:user_id/articles/:id' => 'articles#destroy'
 
   # post '/users/:user_id/articles/result/' => 'articles#search'
 

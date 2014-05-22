@@ -1,10 +1,33 @@
-<% @article.each do |line| %>
-<p><%= line %></p>
-<% end %>
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Freckle+Face' rel='stylesheet' type='text/css'>
+</head>
+<% if @article.first.nil? == true %>
+<center><p style="font-family: 'Freckle Face'; font-size: 96px;">No article</p></center>
 
+<% elsif @article.first.length >= 30  %>
+<center><p style="font-family: 'Freckle Face'; font-size: 96px; color: darkgreen">Good article</p></center>
+</br>
+<center><%= @article.first %></center>
+</br>
+</br>
+</br>
+</br>
+</br>
+<center>
 <form action="articles" method="post">
   <%= token_tag %>
-  <input type="text" name="article[article_name]">
+  <input type="text" name="article[article_name]" placeholder="save article as?">
   <input type="hidden" name="article[article_text]" value="<%= @article.join %>">
-  <input type="submit">
+  <button type="submit">Save</button>
 </form>
+</center>
+<% else  %>
+<center><p style="font-family: 'Freckle Face'; font-size: 96px; color: darkred">No article</p></center>
+
+<%  end %>
+</br>
+</br>
+<center><form action="/search" method='get'>
+  <input type="text" placeholder="Search again?" name='search_term'>
+  <input type="submit">
+</form></center>

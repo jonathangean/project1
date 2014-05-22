@@ -1,19 +1,34 @@
-<h1>ARTICLES</h1>
-<ul>
-  <% @user_articles.each do |article| %>
-    <li>
-      <a href="/users/<%= article.user_id %>/articles/<%= article.id %>"><%= article.article_name %></a>
-    </li>
-    <button>
-      <a href="/articles/<%= article.id %>/poem/new">Think</a>
-    </button>
-</ul>
-
-<% end %>
-
-<form action="/search" method='get'>
-  <input type="text" placeholder="Search" name='search_term'>
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Freckle+Face' rel='stylesheet' type='text/css'>
+</head>
+<center><h1 style="font-family:'Freckle Face';font-size:168px">ARTICLES</h1>
+  <form action="/search" method='get'>
+  <input type="text" placeholder="Search for new article" name='search_term'>
   <input type="submit">
 </form>
+</br>
+</br>
+<ul>
+  <% @user_articles.each do |article| %>
+    <li style="font-family:'Freckle Face';font-size:32px">
+      <a href="/users/<%= article.user_id %>/articles/<%= article.id %>"><%= article.article_name %></a>
+    </li>
+    <form action="/articles/<%= article.id %>/poem/new">
+    <input type="submit" value="Think">
+    </form>
+    <form action="/users/<%= article.user_id %>/articles/<%= article.id %>" method='post'>
+      <%= token_tag %>
+      <input type="hidden" name='_method' value='delete'>
+      <button type='submit'>Delete</button>
+    </form>
+    <% end %>
+</ul>
+
+
+
+<p style="font-family:'Freckle Face';font-size:32px"><a href="/users">Home</a></p>
+
+
+</center>
 
 

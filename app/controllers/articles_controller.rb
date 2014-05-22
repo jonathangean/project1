@@ -16,8 +16,12 @@ class ArticlesController < ApplicationController
   end
   def result
     @article = Wikipedia::article(params[:search_term])
+    @name = params[:search_term]
   end
-
+  def destroy
+    Article.delete(params[:id])
+    redirect_to "/users/#{params[:user_id]}"
+  end
   def search
     render 'result'
   end
