@@ -3,9 +3,9 @@
 </head>
 <center><h1 style="font-family:'Freckle Face';font-size:168px">ARTICLES</h1>
   <form action="/search" method='get'>
-  <input type="text" placeholder="Search for new article" name='search_term'>
-  <input type="submit">
-</form>
+    <input type="text" placeholder="Search for new article" name='search_term'>
+    <input type="submit">
+  </form>
 </br>
 </br>
 <ul>
@@ -14,14 +14,14 @@
       <a href="/users/<%= article.user_id %>/articles/<%= article.id %>"><%= article.article_name %></a>
     </li>
     <form action="/articles/<%= article.id %>/poem/new">
-    <input type="submit" value="Think">
+      <input type="submit" value="Think">
     </form>
     <form action="/users/<%= article.user_id %>/articles/<%= article.id %>" method='post'>
       <%= token_tag %>
       <input type="hidden" name='_method' value='delete'>
       <button type='submit'>Delete</button>
     </form>
-    <% end %>
+  <% end %>
 </ul>
 
 
@@ -30,5 +30,3 @@
 
 
 </center>
-
-
