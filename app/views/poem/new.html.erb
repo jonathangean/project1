@@ -127,7 +127,7 @@
     <div id="background" >
       <ul>
         <% @new_arr.each do |line| %>
-        <% color_var = ['white','black'].sample %>
+        <% color_var = ['white','black','white','white'].sample %>
         <li style="color:<%= color_var %>;font-family:'<%= font_fam_var.sample %>'"><%= line.gsub(/["',.(){}]/, " ") %></li>
         <% end %>
       </ul>
